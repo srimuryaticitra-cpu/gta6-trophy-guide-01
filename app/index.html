@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kura Trophy Atlas — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">
+    <svg class="tortoise" viewBox="0 0 64 40" aria-hidden="true"><ellipse cx="30" cy="26" rx="22" ry="12" fill="#2e7d5b"/><ellipse cx="30" cy="22" rx="16" ry="8" fill="#f4a259"/><circle cx="52" cy="22" r="7" fill="#2e7d5b"/><circle cx="54" cy="20" r="1.6" fill="#fff7e6"/><path d="M10 30 l-6 5 M20 32 l-4 6 M40 32 l4 6" stroke="#2e7d5b" stroke-width="3" stroke-linecap="round"/></svg>
+    <div>
+      <h1>Kura Trophy Atlas</h1>
+      <p class="tagline">A slow-but-sure guide to all 55 GTA VI trophies — Grand Theft Auto VI, PlayStation 5. Works offline.</p>
+    </div>
+  </div>
+  <div class="progress" id="progressBox">
+    <div class="progress-line"><strong id="progressText">0 of 55 earned</strong><span id="gradeCounts"></span></div>
+    <div class="bar"><div class="bar-fill" id="barFill" style="width:0%"></div></div>
+    <p class="progress-note" id="progressNote">Tick a trophy when you earn it. Progress is saved in this browser.</p>
+  </div>
+</header>
+
+<nav class="views" aria-label="Views">
+  <button type="button" class="view-tab active" data-view="checklist" id="tabChecklist">Checklist</button>
+  <button type="button" class="view-tab" data-view="roadmap" id="tabRoadmap">Roadmap to Platinum</button>
+  <button type="button" class="view-tab" data-view="missables" id="tabMissables">Missables <span class="pill" id="missablePill">1</span></button>
+</nav>
+
+<section class="controls" id="controls">
+  <label class="search">Search <input id="search" type="search" placeholder="Search trophy name…"></label>
+  <label>Grade
+    <select id="grade">
+      <option value="all">All grades</option>
+      <option value="platinum">Platinum</option>
+      <option value="gold">Gold</option>
+      <option value="silver">Silver</option>
+      <option value="bronze">Bronze</option>
+    </select>
+  </label>
+  <label>Kind
+    <select id="kind">
+      <option value="all">All kinds</option>
+      <option value="story">Story</option>
+      <option value="missable">Missable</option>
+      <option value="collectibles">Collectibles</option>
+      <option value="activities">Activities</option>
+      <option value="exploration">Exploration</option>
+      <option value="robbery">Robbery</option>
+      <option value="money">Money</option>
+      <option value="misc">Odds &amp; ends</option>
+      <option value="online">Online</option>
+    </select>
+  </label>
+  <label class="check"><input id="unearnedOnly" type="checkbox"> Unearned only</label>
+  <label class="check spoiler"><input id="spoiler" type="checkbox" checked> Hide story spoilers</label>
+  <button id="export" type="button">Export progress</button>
+  <label class="import">Import progress <input id="import" type="file" accept="application/json,.json"></label>
+</section>
+<p class="online-note" id="onlineNote" hidden>No online trophies: all 55 are single-player, as listed by Exophase and PSNProfiles.</p>
+
+<main class="layout">
+  <section class="list-col" id="checklistView" aria-label="Trophy checklist">
+    <p class="list-meta" id="listMeta"></p>
+    <ul class="trophy-list" id="trophyList"></ul>
+  </section>
+
+  <aside class="detail" id="detail" aria-label="Trophy guide">
+    <p class="detail-empty">Select a trophy on the left to read its guide and sources.</p>
+  </aside>
+
+  <section class="roadmap-view" id="roadmapView" hidden aria-label="Roadmap to the platinum">
+    <h2>Roadmap to the platinum</h2>
+    <p class="roadmap-intro">Eight stages, in order, built from the official trophy descriptions. The story comes first; the grind comes last. Keep a manual save at the start of every chapter and one before the final mission — guides report there is no mission replay.</p>
+    <ol class="stages" id="stages"></ol>
+  </section>
+
+  <section class="missables-view" id="missablesView" hidden aria-label="Missable trophies">
+    <h2>Missable trophies</h2>
+    <p class="missables-intro">Only one trophy is reported as possibly missable. The rest are safe — but with no mission replay reported, a manual save before each chapter is cheap insurance.</p>
+    <ul class="missable-list" id="missableList"></ul>
+    <h3>Why the rest are safe</h3>
+    <p>Story trophies pop when you finish their mission or chapter, side-character finales pop when you finish their strand, and every collectible, activity, robbery and money trophy can be finished in free roam after the story. Nothing else on the list is tied to a one-time moment — except the meditation spot in Chapter 1, flagged above.</p>
+  </section>
+</main>
+
+<footer>
+  <p>Names and descriptions are the official PlayStation text, as listed by Exophase and PSNProfiles (18 Nov 2026) and cross-checked on Planet GTA 6. Guides are this atlas's own words, each with its sources beside it. No Rockstar logo or artwork is used. No online trophies exist in this list.</p>
+  <p class="foot-note">Kura Trophy Atlas — slow but sure. Progress lives in your browser (localStorage); export it to keep a backup.</p>
+</footer>
+<script type="module" src="src/main.js"></script>
+</body>
+</html>
